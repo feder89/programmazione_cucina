@@ -4,7 +4,7 @@
 	$portate=array();
 		$idprg=0;
 		$idprg_next=0;
-		$query_idprog="SELECT min(idprogrammazione) as idprg FROM programmazioneordini WHERE stato = 2";
+		$query_idprog="SELECT min(idprogrammazione) as idprg FROM programmazioneordini WHERE stato = 2 AND categoria IN ('primo','secondo','contorno')";
 		$result_idprog = mysqli_query($link, $query_idprog) or die("#error#".mysqli_error($link));
 	    while ($row_idprg = mysqli_fetch_assoc($result_idprog)) {
 	    	$idprg=$row_idprg['idprg'];
